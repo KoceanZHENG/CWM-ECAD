@@ -21,7 +21,7 @@
 module counter(
     //Todo: add ports 
     input rst, clk, enable, direction;
-    output  reg counter_out[7:0];
+    output  reg counter_out[7:0]
     );
                     
     //Todo: add registers and wires, if needed
