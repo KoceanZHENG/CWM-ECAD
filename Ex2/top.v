@@ -36,6 +36,7 @@ module mux(
             #5 out<=b;
         else
             #5 out<=a;
+
     end
     
       
