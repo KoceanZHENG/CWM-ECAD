@@ -28,7 +28,7 @@ module top_tb(
 //Todo: Clock generation
 	initial
 	begin
-	clk = 1
+	clk = 1;
 	forever
 	#(CLK_PERIOD/2) clk = ~clk;
 	end
@@ -60,7 +60,7 @@ begin
 	#(CLK_PERIOD)
 	if(counter_prev != counter_out)
 	begin
-		$display("Test Failed! Enable doesn't work")
+		$display("Test Failed! Enable doesn't work");
 		err = 1;
 	end
 
@@ -71,7 +71,7 @@ begin
 	//Testing counting up
 	rst = 0;
 	enable =1;
-	direction = 1
+	direction = 1;
 	counter_prev = counter_out;
 	#(CLK_PERIOD)
 	if(counter_prev > counter_out)
@@ -86,12 +86,12 @@ begin
 	//Testing counting down
 	rst = 0;
 	enable =1;
-	direction = 1
+	direction = 0;
 	counter_prev = counter_out;
 	#(CLK_PERIOD)
 	if(counter_prev < counter_out)
 	begin
-		$display("Test Failed! Counting up doesn't work");
+		$display("Test Failed! Counting down doesn't work");
 		err = 1;
 	end
 	end
@@ -104,8 +104,8 @@ initial
 begin
 	#200
 	if(err ==0)
-	$display("Test Passed!")
-	$finish
+	$display("Test Passed!");
+	$finish;
 end
 
 
