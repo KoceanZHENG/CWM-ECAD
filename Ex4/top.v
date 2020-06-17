@@ -16,3 +16,22 @@
 //  You need to write the whole file.
 //////////////////////////////////////////////////////////////////////////////////
 
+`timescale 1ns/100ps
+
+module counter(
+//Todo: add ports
+input clk, rst, button;
+output reg throw[2:0];
+)
+
+//Todo: add user logic
+always @ (posedge clk || posedge rst) 
+begin
+if (rst)
+	throw<=3b'0;
+else if (button)
+	throw<=(throw ==0 || throw ==7)? 1 : throw +1;
+else
+	throw<=(throw ==0 || throw ==7)? 1 : throw;
+end
+endmodule
