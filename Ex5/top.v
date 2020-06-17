@@ -27,11 +27,11 @@ wire[2:0] rag = {red,amber,green};
 always @ (posedge clk) 
 begin
 	case(rag)
-	3b'100: rag<=110;
-	3b'110: rag<=001;
-	3b'001: rag<=010;
-	3b'010: rag<=100;
-	default: rag<=100;
+	3'b100: rag<=3'b110;
+	3'b110: rag<=3'b001;
+	3'b001: rag<=3'b010;
+	3'b010: rag<=3'b100;
+	default: rag<=3'b100;
 	endcase
 end
 endmodule
