@@ -18,7 +18,7 @@
 
 `timescale 1ns/100ps
 
-module counter(
+module dice(
 //Todo: add ports
 input clk, rst, button;
 output reg throw[2:0];
