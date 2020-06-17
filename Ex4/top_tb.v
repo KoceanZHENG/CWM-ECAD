@@ -52,12 +52,13 @@ begin
 	button = 1;
 	throw_prev = throw;
 	#(CLK_PERIOD)
-	if (throw_prev ==7 || throw_prev = 6 && throw != 1)
+	if (throw_prev != throw - 1)
 		$display("Test Failed! Button=1 doesn't work");
 		err = 1;
-	else if (throw_prev != throw - 1)
+	else if (throw_prev ==7 || throw_prev = 6 && throw != 1)
 		$display("Test Failed! Button=1 doesn't work");
 		err = 1;
+
 
 	#5
 	//Test button =0
