@@ -21,7 +21,7 @@
 module dice(
 //Todo: add ports
 input clk, rst, button;
-output reg throw[2:0];
+output reg [2:0] throw;
 )
 
 //Todo: add user logic
