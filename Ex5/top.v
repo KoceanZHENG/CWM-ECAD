@@ -18,7 +18,7 @@
 module traffic_light(
 //Todo: add ports
 input clk;
-output reg red,amber,green;
+output reg red,amber,green
 )
 //Todo: add wire
 wire[2:0] rag = {red,amber,green};
