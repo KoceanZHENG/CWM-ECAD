@@ -30,8 +30,8 @@ begin
 if (rst)
 	throw<=3b'0;
 else if (button)
-	throw<=(throw ==0 || throw ==7)? 1 : throw +1;
+	throw<=(throw == 0 || throw == 7)? 1 : throw +1;
 else
-	throw<=(throw ==0 || throw ==7)? 1 : throw;
+	throw<=(throw == 0 || throw == 7)? 1 : throw;
 end
 endmodule
