@@ -35,6 +35,7 @@ initial
 begin
 	rst = 0;
 	button = 0;
+	err=0;
 
 	#5
 	forever begin
