@@ -13,15 +13,18 @@
 //           red, amber, green
 //////////////////////////////////////////////////////////////////////////////////
 
+
 `timescale 1ns/100ps
 
 module traffic_light(
 //Todo: add ports
 input clk;
-output reg red,amber,green
+output red,amber,green
 )
-//Todo: add wire
-reg [2:0] rag = {red,amber,green};
+//Todo: add register
+reg [2:0] rag;
+
+assign {red,amber,green} = rag;
 
 //Todo: add user logic
 always @ (posedge clk) 
