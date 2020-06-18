@@ -38,9 +38,10 @@ begin
 	forever begin
 	#5
 	//Testing unwanted states
-	if((rag != 3'b100) || (rag != 3'b110) || (rag != 3'b001) || (rag != 3'b010))
+	if((rag != 3'b100) || (rag != 3'b110) || (rag != 3'b001) || (rag != 3'b010)) begin
 	$display("Unwanted States!");
 	err = 1;
+	end
 
 	//Testing order
 	#5
