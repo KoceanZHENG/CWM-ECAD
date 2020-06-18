@@ -19,8 +19,10 @@ module top_tb(
 //Registers and wires
 	reg clk;
 	wire [2:0] rag;
-	reg [2:0] rag_prev
-
+	reg [2:0] rag_prev;
+	wire red, amber, green;
+	assign{red, amber, green} = rag;
+	
 //Clock generation
 	initial
 	begin
@@ -38,7 +40,7 @@ begin
 	forever begin
 	#5
 	//Testing unwanted states
-	if((rag != 3'b100) || (rag != 3'b110) || (rag != 3'b001) || (rag != 3'b010)) begin
+	if((rag !== 3'b100) || (rag !== 3'b110) || (rag !== 3'b001) || (rag !== 3'b010)) begin
 	$display("Unwanted States!");
 	err = 1;
 	end
@@ -46,20 +48,20 @@ begin
 	//Testing order
 	#5
 	rag_prev = rag;
-	#(CLOCK_PERIOD)
-	if ((rag_prev = 3'b100) && (rag !=3'b110) ) begin
+	#(CLK_PERIOD)
+	if ((rag_prev == 3'b100) && (rag !==3'b110) ) begin
 	$display("Wrong order!");
 	err = 1;
 	end
-	else if ((rag_prev = 3'b110) && (rag !=3'b001) ) begin
+	else if ((rag_prev == 3'b110) && (rag !==3'b001) ) begin
 	$display("Wrong order!");
 	err = 1;
 	end
-	else if((rag_prev = 3'b001) && (rag !=3'b010) ) begin
+	else if((rag_prev == 3'b001) && (rag !==3'b010) ) begin
 	$display("Wrong order!");
 	err = 1;
 	end
-	else if((rag_prev = 3'b010) && (rag !=3'b100) ) begin
+	else if((rag_prev == 3'b010) && (rag !==3'b100) ) begin
 	$display("Wrong order!");
 	err = 1;
 	end
