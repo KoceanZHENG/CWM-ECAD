@@ -38,7 +38,7 @@ begin
 	forever begin
 	#5
 	//Testing unwanted states
-	if(rag != 3'b100 || rag != 3'b110 || rag != 3'b001 || rag != 3'b010)
+	if((rag != 3'b100) || (rag != 3'b110) || (rag != 3'b001) || (rag != 3'b010))
 	$display("Unwanted States!");
 	err = 1;
 
@@ -46,18 +46,22 @@ begin
 	#5
 	rag_prev = rag;
 	#(CLOCK_PERIOD)
-	if (rag_prev = 3'b100 && rag !=3'b110 )
+	if ((rag_prev = 3'b100) && (rag !=3'b110) ) begin
 	$display("Wrong order!");
 	err = 1;
-	else if (rag_prev = 3'b110 && rag !=3'b001 )
+	end
+	else if ((rag_prev = 3'b110) && (rag !=3'b001) ) begin
 	$display("Wrong order!");
 	err = 1;
-	else (rag_prev = 3'b001 && rag !=3'b010 )
+	end
+	else if((rag_prev = 3'b001) && (rag !=3'b010) ) begin
 	$display("Wrong order!");
 	err = 1;
-	else (rag_prev = 3'b010 && rag !=3'b100 )
+	end
+	else if((rag_prev = 3'b010) && (rag !=3'b100) ) begin
 	$display("Wrong order!");
 	err = 1;
+	end
 	else
 	err = 0;
 
