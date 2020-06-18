@@ -20,7 +20,7 @@ module traffic_light(
 input clk;
 output reg red,amber,green
 )
-//Todo: add wire
+//Todo: add register
 reg [2:0] rag = {red,amber,green};
 
 //Todo: add user logic
