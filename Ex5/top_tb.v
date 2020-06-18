@@ -46,16 +46,16 @@ begin
 	#5
 	rag_prev = rag;
 	#(CLOCK_PERIOD)
-	if (rag_prev = 100 && rag !=110 )
+	if (rag_prev = 3'b100 && rag !=3'b110 )
 	$display("Wrong order!");
 	err = 1;
-	else if (rag_prev = 110 && rag !=001 )
+	else if (rag_prev = 3'b110 && rag !=3'b001 )
 	$display("Wrong order!");
 	err = 1;
-	else (rag_prev = 001 && rag !=010 )
+	else (rag_prev = 3'b001 && rag !=3'b010 )
 	$display("Wrong order!");
 	err = 1;
-	else (rag_prev = 010 && rag !=100 )
+	else (rag_prev = 3'b010 && rag !=3'b100 )
 	$display("Wrong order!");
 	err = 1;
 	else
