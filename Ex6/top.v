@@ -20,3 +20,18 @@
 //
 //////////////////////////////////////////////////////////////////////////////////
 
+`timescale 1ns/100ps
+
+module top(
+	input clk, sel, rst, button;
+	output [2:0] result
+);
+
+wire [2:0] throw;
+wire [2:0] rag;
+
+dice my_dice(.clk(clk), .rst(rst), .button(button), .throw(throw));
+traffic_light my_traffic_light(.clk(clk), .red(red), .amber(amber), .green(green));
+mux multiplexer(.a(throw), .b(rag), .out(result));
+
+endmodule
