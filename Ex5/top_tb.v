@@ -73,7 +73,7 @@ end
 initial
 begin
 	#200
-	if(err = 0)
+	if(err == 0)
 	$display("Test Passed!");
 	$finish
 end
