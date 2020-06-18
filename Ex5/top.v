@@ -21,7 +21,7 @@ input clk;
 output reg red,amber,green
 )
 //Todo: add wire
-wire[2:0] rag = {red,amber,green};
+reg [2:0] rag = {red,amber,green};
 
 //Todo: add user logic
 always @ (posedge clk) 
