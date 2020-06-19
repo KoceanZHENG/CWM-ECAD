@@ -40,7 +40,7 @@ begin
 	forever begin
 	#5
 	//Testing unwanted states
-	if((rag !== 3'b100) || (rag !== 3'b110) || (rag !== 3'b001) || (rag !== 3'b010)) begin
+	if((rag != 3'b100) || (rag != 3'b110) || (rag != 3'b001) || (rag != 3'b010)) begin
 	$display("Unwanted States!");
 	err = 1;
 	end
@@ -49,19 +49,19 @@ begin
 	#5
 	rag_prev = rag;
 	#(CLK_PERIOD)
-	if ((rag_prev == 3'b100) && (rag !==3'b110) ) begin
+	if ((rag_prev == 3'b100) && (rag !=3'b110) ) begin
 	$display("Wrong order!");
 	err = 1;
 	end
-	else if ((rag_prev == 3'b110) && (rag !==3'b001) ) begin
+	else if ((rag_prev == 3'b110) && (rag !=3'b001) ) begin
 	$display("Wrong order!");
 	err = 1;
 	end
-	else if((rag_prev == 3'b001) && (rag !==3'b010) ) begin
+	else if((rag_prev == 3'b001) && (rag !=3'b010) ) begin
 	$display("Wrong order!");
 	err = 1;
 	end
-	else if((rag_prev == 3'b010) && (rag !==3'b100) ) begin
+	else if((rag_prev == 3'b010) && (rag !=3'b100) ) begin
 	$display("Wrong order!");
 	err = 1;
 	end
