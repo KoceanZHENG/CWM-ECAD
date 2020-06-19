@@ -28,10 +28,10 @@ module top(
 );
 
 wire [2:0] throw;
-wire [2:0] rag;
+wire red, amber, green;
 
 dice my_dice(.clk(clk), .rst(rst), .button(button), .throw(throw));
 traffic_light my_traffic_light(.clk(clk), .red(red), .amber(amber), .green(green));
-mux multiplexer(.a(throw), .b(rag), .out(result));
+mux multiplexer(.a(throw), .b({red, amber, green}), .out(result));
 
 endmodule
